@@ -16,7 +16,7 @@ jobs:
       script: |
         # Write your commands here
         
-        echo 'Hello world'
+        echo 'Hello world '
 
   - task: ServiceNow Job Notification@0
     inputs:
