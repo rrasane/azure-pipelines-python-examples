@@ -203,6 +203,20 @@ stages:
       inputs:
         pathtoPublish: $(Build.ArtifactStagingDirectory)
         artifactName: Library_Basic_Wheel
+  - job: 'server'
+    pool: server
+    steps:
+      - task: ServiceNow-DevOps-Server-Job-Notification@1
+        inputs:
+          connectedServiceName: 'devopsdev3_Mohan'
+          Phase: 'STARTED'
+      - task: Delay@1
+        inputs:
+          delayForMinutes: '0'
+      - task: ServiceNow-DevOps-Server-Job-Notification@1
+        inputs:
+          connectedServiceName: 'devopsdev3_Mohan'
+          Phase: 'COMPLETED'
         
 - stage: prod
   jobs:
