@@ -37,7 +37,7 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFiles: 'reports/django-basic.xml'
-        testRunTitle: '$(Agent.OS) - $(Build.BuildNumber)[$(Agent.JobName)] - Python $(python.version)'
+        testRunTitle: '$(Agent.JobName)'
       condition: succeededOrFailed()
 
   - job: 'django_multi_environment'
@@ -76,7 +76,7 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFiles: 'reports/django-multi-environment.xml'
-        testRunTitle: '$(Agent.OS) - $(Build.BuildNumber)[$(Agent.JobName)] - Python $(python.version) - Django $(django.version)'
+        testRunTitle: '$(Agent.JobName)'
       condition: succeededOrFailed()
 
 - stage: Test
@@ -113,7 +113,7 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFiles: 'reports/flask-basic.xml'
-        testRunTitle: '$(Agent.OS) - $(Build.BuildNumber)[$(Agent.JobName)] - Python $(python.version)'
+        testRunTitle: '$(Agent.JobName)'
       condition: succeededOrFailed()
 
   - job: 'flask_basic_with_coverage'
@@ -149,7 +149,7 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFiles: 'reports/flask-basic-coverage.xml'
-        testRunTitle: '$(Agent.OS) - $(Build.BuildNumber)[$(Agent.JobName)] - Python $(python.version)'
+        testRunTitle: '$(Agent.JobName)'
       condition: succeededOrFailed()
 
 - stage: Deploy
@@ -186,7 +186,7 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFiles: 'reports/library-basic.xml'
-        testRunTitle: '$(Agent.OS) - $(Build.BuildNumber)[$(Agent.JobName)] - Python $(python.version)'
+        testRunTitle: '$(Agent.JobName)'
       condition: succeededOrFailed()
 
     - script: |
@@ -250,7 +250,7 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFiles: 'reports/library-flit.xml'
-        testRunTitle: '$(Agent.OS) - $(Build.BuildNumber)[$(Agent.JobName)] - Python $(python.version)'
+        testRunTitle: '$(Agent.JobName)'
       condition: succeededOrFailed()
     
     - task: CopyFiles@2
