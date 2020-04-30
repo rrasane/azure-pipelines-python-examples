@@ -203,7 +203,9 @@ stages:
       inputs:
         pathtoPublish: $(Build.ArtifactStagingDirectory)
         artifactName: Library_Basic_Wheel
-
+        
+- stage: prod
+  jobs:
   - job: 'library_flit'
     pool:
       vmImage: 'Ubuntu-16.04'
@@ -261,8 +263,7 @@ stages:
         pathtoPublish: $(Build.ArtifactStagingDirectory)
         artifactName: Library_Flit_Wheel
 
-- stage: prod
-  jobs:
+
   - job: 'install_library'
     dependsOn: 'library_flit'
     pool:
