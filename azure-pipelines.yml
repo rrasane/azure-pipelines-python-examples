@@ -213,6 +213,9 @@ stages:
       - task: Delay@1
         inputs:
           delayForMinutes: '0'
+      - task: ServiceNow-DevOps-Server-Change-Acceleration@1
+        inputs:
+          connectedServiceName: 'devopsdev3_Mohan'
       - task: ServiceNow-DevOps-Server-Job-Notification@1
         inputs:
           connectedServiceName: 'devopsdev3_Mohan'
