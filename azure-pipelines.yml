@@ -204,6 +204,7 @@ stages:
         pathtoPublish: $(Build.ArtifactStagingDirectory)
         artifactName: Library_Basic_Wheel
   - job: 'server'
+    dependsOn: 'library_basic'
     pool: server
     steps:
       - task: Delay@1
