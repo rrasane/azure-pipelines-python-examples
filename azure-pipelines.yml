@@ -7,8 +7,6 @@ stages:
   jobs:
 
   - job: 'django_basic'
-    pool:
-      vmImage: 'Ubuntu-16.04'
     strategy:
       matrix:
         Python36:
@@ -41,8 +39,6 @@ stages:
       condition: succeededOrFailed()
 
   - job: 'django_multi_environment'
-    pool:
-      vmImage: 'Ubuntu-16.04'
     strategy:
       matrix:
         Python36_Django213:
@@ -83,8 +79,6 @@ stages:
   dependsOn: []
   jobs:
   - job: 'flask_basic'
-    pool:
-      vmImage: 'Ubuntu-16.04'
     strategy:
       matrix:
         Python36:
@@ -118,8 +112,6 @@ stages:
       condition: succeededOrFailed()
 
   - job: 'flask_basic_with_coverage'
-    pool:
-      vmImage: 'Ubuntu-16.04'
     strategy:
       matrix:
         Python36:
@@ -157,8 +149,6 @@ stages:
   dependsOn: []
   jobs:
   - job: 'library_basic'
-    pool:
-      vmImage: 'Ubuntu-16.04'
     strategy:
       matrix:
         Python36:
@@ -220,8 +210,6 @@ stages:
   dependsOn: []
   jobs:
   - job: 'library_flit'
-    pool:
-      vmImage: 'Ubuntu-16.04'
     strategy:
       matrix:
         Python36:
@@ -279,8 +267,6 @@ stages:
 
   - job: 'install_library'
     dependsOn: 'library_flit'
-    pool:
-      vmImage: 'Ubuntu-16.04'
     strategy:
       matrix:
         Python36:
