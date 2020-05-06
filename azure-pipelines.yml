@@ -80,6 +80,7 @@ stages:
       condition: succeededOrFailed()
 
 - stage: Test
+  dependsOn: []
   jobs:
   - job: 'flask_basic'
     pool:
@@ -153,6 +154,7 @@ stages:
       condition: succeededOrFailed()
 
 - stage: Deploy
+  dependsOn: []
   jobs:
   - job: 'library_basic'
     pool:
@@ -215,6 +217,7 @@ stages:
           connectedServiceName: 'devopsdev3_Mohan'
         
 - stage: prod
+  dependsOn: []
   jobs:
   - job: 'library_flit'
     pool:
