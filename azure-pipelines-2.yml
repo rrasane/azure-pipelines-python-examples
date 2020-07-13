@@ -39,6 +39,7 @@ stages:
       condition: succeededOrFailed()
 
   - job: 'django_multi_environment'
+    dependsOn: 'django_basic'
     strategy:
       matrix:
         Python36_Django213:
