@@ -14,7 +14,8 @@ stages:
           # Write your commands here
           
           echo 'Hello world'
-  - job: 'Test'
+  - job: 'Test1'
+    dependsOn: "Build"
     steps:
     - task: Bash@3
       inputs:
