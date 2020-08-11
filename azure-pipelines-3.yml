@@ -40,7 +40,7 @@ stages:
           
           echo 'Hello world '
 
-  - job: "Prod-Job"
+  - job: "ProdHelloWorldJob"
     pool: server
     dependsOn: "Deploy"
     steps:
