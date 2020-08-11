@@ -3,9 +3,9 @@ trigger:
 name: $(Date:yyyyMMdd)$(Rev:.r)
 
 stages:
-- stage: Build-Stage
+- stage: BuildStage
   jobs:
-  - job: 'Build-Job'
+  - job: 'BuildHelloWorldJob'
     steps:
     - task: Bash@3
       inputs:
@@ -14,8 +14,8 @@ stages:
           # Write your commands here
           
           echo 'Hello world'
-  - job: 'Test-Job'
-    dependsOn: "Build-Job"
+  - job: 'TestHellowWorldJob'
+    dependsOn: "BuildHelloWorldJob"
     steps:
     - task: Bash@3
       inputs:
@@ -28,9 +28,9 @@ stages:
 
 
   
-- stage: Test-Stage
+- stage: TestStage
   jobs:
-  - job: "Deploy-Job"
+  - job: "DeployHelloWorldJob"
     steps:
     - task: Bash@3
       inputs:
