@@ -48,7 +48,7 @@ stages:
       inputs:
         connectionType: 'connectedServiceName'
         serviceConnection: 'RohanService'
-        urlSuffix: "/api/sn_devops/v1/devops/orchestration/changeControl"
+        urlSuffix: "api/sn_devops/v1/devops/orchestration/changeControl"
         method: 'POST'
         body: |
           {
