@@ -47,7 +47,7 @@ stages:
     - task: InvokeRESTAPI@1
       inputs:
         connectionType: 'connectedServiceName'
-        serviceConnection: 'Mohan Azure'
+        serviceConnection: 'RohanService'
         method: 'POST'
         body: |
           {
